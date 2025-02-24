@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OrderTaker - Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <!-- Logo Container -->
+    <div class="logo-container">
+      <img 
+        src="images/ordertaker-logo.png" 
+        alt="OrderTaker Logo" 
+        class="logo-img"
+      />
+    </div>
+    
+    <!-- Login Form -->
+    <h2 class="form-title">LOGIN</h2>
+    <form id="loginForm" class="form-box">
+      <div class="input-group">
+        <input type="text" id="username" placeholder="USERNAME" required />
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="PASSWORD" required />
+      </div>
+      <button type="submit" class="primary-btn form-btn">LOGIN</button>
+    </form>
+
+    <!-- Sign Up Link -->
+    <p class="signup-text">
+      Not a member?
+      <a href="signup.html">Sign up now</a>
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

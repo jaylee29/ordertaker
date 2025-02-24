@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - OrderTaker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <h2>OrderTaker</h2>
+    </div>
+    <!-- Navigation Links -->
+    <nav>
+      <a href="history.html" class="nav-link">View History</a>
+      <a href="#" class="nav-link" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <main class="menu-page">
+    <h1>Welcome to the Menu!</h1>
+
+
+    <!-- Food Items Section -->
+    <section class="menu-section">
+      <h2>Food Items</h2>
+      <div id="foodMenu" class="menu-grid">
+        <div class="menu-item">
+          <img src="images/pizza.jpg" alt="Pizza" class="menu-item-img">
+          <h2>Pizza</h2>
+          <p>Price: $199</p>
+          <button onclick="addToCart('Pizza', 199)" class="secondary-btn">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/burger.jpg" alt="Burger" class="menu-item-img">
+          <h2>Burger</h2>
+          <p>Price: $159</p>
+          <button onclick="addToCart('Burger', 159)" class="secondary-btn">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/pasta.jpg" alt="Spaghetti" class="menu-item-img">
+          <h2>Spaghetti</h2>
+          <p>Price: $180</p>
+          <button onclick="addToCart('Spaghetti', 180)" class="secondary-btn">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/fries.jpg" alt="Fries" class="menu-item-img">
+          <h2>Fries</h2>
+          <p>Price: $40</p>
+          <button onclick="addToCart('Fries', 40)" class="secondary-btn">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/footlong.jpg" alt="Footlong Sandwich" class="menu-item-img">
+          <h2>Footlong Sandwich</h2>
+          <p>Price: $115</p>
+          <button onclick="addToCart('Footlong Sandwich', 115)" class="secondary-btn">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/popcorn.jfif" alt="Popcorn" class="menu-item-img">
+          <h2>Popcorn</h2>
+          <p>Price: $75</p>
+          <button onclick="addToCart('Popcorn', 75)" class="secondary-btn">Order</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section class="menu-section">
+      <h2>Drinks</h2>
+      <div id="drinksMenu" class="menu-grid">
+        <div class="menu-item">
+          <img src="images/coke.jfif" alt="Coke" class="menu-item-img">
+          <h2>Coke</h2>
+          <p>Price: $20</p>
+          <button onclick="addToCart('Coke', 20)" class="secondary-btn">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/lemon-juice.png" alt="Lemon Juice" class="menu-item-img">
+          <h2>Lemon Juice</h2>
+          <p>Price: $20</p>
+          <button onclick="addToCart('Lemon Juice', 20)" class="secondary-btn">Order</button>
+        </div>
+        <div class="menu-item">
+          <img src="images/pineapple-juice.png" alt="Pineapple Juice" class="menu-item-img">
+          <h2>Pineapple Juice</h2>
+          <p>Price: $20</p>
+          <button onclick="addToCart('Pineapple Juice', 20)" class="secondary-btn">Order</button>
+        </div>
+      </div>
+    </section>
+
+    <h3>Your Cart</h3>
+    <ul id="cart">
+      <!-- Cart items will be dynamically added here -->
+    </ul>
+
+    <!-- Delivery details & Order form -->
+    <form id="orderForm" action="order.php" method="POST">
+      <input type="hidden" name="order_details" id="orderDetails" />
+      <div class="input-group delivery-group">
+        <input type="text" id="deliveryAddress" placeholder="Enter delivery address" class="delivery-input" required />
+      </div>
+      <div class="input-group delivery-group">
+        <input type="text" id="contactNumber" placeholder="Enter contact number" class="delivery-input" required />
+      </div>
+      <button type="submit" class="primary-btn">Place Order</button>
+    </form>
+  </main>
+
+  <!-- Modal for Receipt -->
+  <div id="receiptModal" class="modal">
+    <div class="modal-content">
+      <h2>Receipt</h2>
+      <div id="receiptDetails">
+        <!-- The receipt text will be injected here via JavaScript -->
+      </div>
+      <button class="close-btn" onclick="closeReceipt()">Close</button>
+    </div>
+  </div>
+</body>
+</html>

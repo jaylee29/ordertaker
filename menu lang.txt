@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - OrderTaker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <h2>OrderTaker</h2>
+    </div>
+  </header>
+
+  <main class="menu-page">
+     <h1>Welcome to the Menu!</h1>
+
+    <div id="menu" class="menu-grid">
+      <div class="menu-item">
+        <img src="images/pizza.jpg" alt="Pizza" class="menu-item-img">
+        <h2>Pizza</h2>
+        <p>Price: $199</p>
+        <button onclick="addToCart('Pizza', 199)" class="secondary-btn">Order</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/burger.jpg" alt="Burger" class="menu-item-img">
+        <h2>Burger</h2>
+        <p>Price: $159</p>
+        <button onclick="addToCart('Burger', 159)" class="secondary-btn">Order</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/pasta.jpg" alt="Spaghetti" class="menu-item-img">
+        <h2>Spaghetti</h2>
+        <p>Price: $180</p>
+        <button onclick="addToCart('Spaghetti', 180)" class="secondary-btn">Order</button>
+      </div>
+    </div>
+
+    <h3>Your Cart</h3>
+    <ul id="cart">
+      <!-- Cart items will be dynamically added here -->
+    </ul>
+
+    <form id="orderForm" action="order.php" method="POST">
+      <input type="hidden" name="order_details" id="orderDetails" />
+      <button type="submit" class="primary-btn">Place Order</button>
+    </form>
+  </main>
+
+  <!-- Modal for Receipt -->
+  <div id="receiptModal" class="modal">
+    <div class="modal-content">
+      <h2>Receipt</h2>
+      <div id="receiptDetails">
+        <!-- The receipt text will be injected here via JavaScript -->
+      </div>
+      <button class="close-btn" onclick="closeReceipt()">Close</button>
+    </div>
+  </div>
+</body>
+</html>
